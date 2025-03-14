@@ -166,10 +166,18 @@ if (!window.__cfRLUnblockHandlers) return false; return false"
 
 data-cf-modified-d02c1286c823fb90a14b7c8d-="" oncontextmenu="return false;">
 <div class="video-background">
-    <iframe src="https://www.youtube.com/embed/vzSPvrBAd9U?autoplay=1&mute=1&loop=1&playlist=vzSPvrBAd9U&controls=0&showinfo=0&modestbranding=1" 
+    <iframe id="bg-video" src="https://www.youtube.com/embed/vzSPvrBAd9U?autoplay=1&mute=1&loop=1&playlist=vzSPvrBAd9U&controls=0&showinfo=0&modestbranding=1" 
         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
+
+<script>
+   
+    document.addEventListener("click", function () {
+        var iframe = document.getElementById("bg-video");
+        iframe.src = "https://www.youtube.com/embed/vzSPvrBAd9U?autoplay=1&mute=0&loop=1&playlist=vzSPvrBAd9U&controls=0&showinfo=0&modestbranding=1";
+    }, { once: true }); 
+</script>
 
     <div class="container">
         <h1>H4CKTHOR</h1>

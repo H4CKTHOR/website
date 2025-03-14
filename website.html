@@ -126,6 +126,31 @@
             background: #cc0000;
         }
     </style>
+    <style>
+     .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    overflow: hidden;
+    z-index: -1; 
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw; 
+    min-height: 100vh;
+    min-width: 177.77vh;
+    pointer-events: none; 
+}
+    </style>
 </head>
 <body onkeydown="if (!window.__cfRLUnblockHandlers) return false;
 
@@ -140,6 +165,12 @@ return false" onselectstart="if (!window.__cfRLUnblockHandlers) return false;
 if (!window.__cfRLUnblockHandlers) return false; return false"
 
 data-cf-modified-d02c1286c823fb90a14b7c8d-="" oncontextmenu="return false;">
+<div class="video-background">
+    <iframe src="https://www.youtube.com/embed/vzSPvrBAd9U?autoplay=1&mute=1&loop=1&playlist=vzSPvrBAd9U&controls=0&showinfo=0&modestbranding=1" 
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
     <div class="container">
         <h1>H4CKTHOR</h1>
         <h2>Web Developer | Cyber Security Specialist</h2>
@@ -150,7 +181,7 @@ data-cf-modified-d02c1286c823fb90a14b7c8d-="" oncontextmenu="return false;">
         </div>   
         
         <div class="section">
-            <h3>Social Media!</h3>
+            <h3>Social Media</h3>
             <p>
                 <a class="button" href="https://www.linkedin.com/in/nij4trahimov/" target="_blank">LinkedIn</a>
                 <a class="button" href="https://instagram.com/h4ckthor" target="_blank">Instagram</a>
@@ -159,63 +190,7 @@ data-cf-modified-d02c1286c823fb90a14b7c8d-="" oncontextmenu="return false;">
             </p>
         </div>
     </div>
-    <audio  loop="true" autoplay="true" class="music" style="display: none;">
-        <source src="" type="audio/mpeg">
-    </audio>     
+       
     
-    <script>
-        document.querySelector(".music").src = "https://c.top4top.io/m_3359rogee1.m4a";
-        function open_sound() {
-            document.querySelector(".music").play();
-        }
-        window.onclick = function() { open_sound(); }
-        window.onkeydown = function() { open_sound(); }
-        var passwords = ['H4CKTHOR WAS HERE!'];
-        var indexOld;
-        var index = Math.floor((Math.random() * passwords.length));
-        var password = passwords[index];
-        var characters = [];
-        var counter = 0;
-    
-        var interval = setInterval(function(){
-                for(i = 0; i < counter; i++) {
-                    characters[i] = password.charAt(i);
-                }
-                for(i = counter; i < password.length; i++) {
-                    characters[i] = Math.random().toString(36).charAt(2);
-                }
-                $('.password').text(characters.join(''));
-            }, 25);
-    
-    
-        function hack() {
-            counter++;
-            if(counter == password.length){
-                $('.granted, .rerun').removeClass('hidden');
-            }
-        }
-        $(window).on('keydown', hack);
-        $('.password').on('click', hack);
-    
-    
-        $('.rerun').on('click', function() {
-           
-            indexOld = index; 
-            do {
-                index = Math.floor((Math.random() * passwords.length));
-            } while(index == indexOld);
-    
-            $('.granted, .rerun').addClass('hidden');
-            password = passwords[index];
-            characters = [];
-            counter = 0;
-        });
-    
-        
-        $('.start').on('click', function() {
-            $(this).addClass('hidden');
-            $('.info p:last-child, .password').removeClass('hidden');
-        });    
-    </script>
 </body>
 </html>
